@@ -1,16 +1,22 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const connectDB = require('./config/connection');
+// const connectDB = require('./config/connection');
+const db = require('./config/connection');
+const routes = require('./routes')
 
 dotenv.config();
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-connectDB();
+// connectDB();
 
-app.listen(PORT, () => console.log(`Server has been established on port ${PORT}`))
+app.use(routes);
+
+db.once('open', () => {
+    app.listen(PORT, () => console.log(`Server has been established on port ${PORT}`))
+});
 
