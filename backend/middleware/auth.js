@@ -12,9 +12,7 @@ function authMiddleware(req, res, next) {
     }
 
     try{
-        // verify token
         const decoded = jwt.verify(token, secret);
-        // Add user from payload
         req.user = decoded
         next();
     } catch(e) {

@@ -1,6 +1,5 @@
 const express = require('express');
 const dotenv = require('dotenv');
-// const connectDB = require('./config/connection');
 const db = require('./config/connection');
 const routes = require('./routes')
 
@@ -12,7 +11,6 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// connectDB();
 
 app.use(routes);
 
