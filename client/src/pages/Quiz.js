@@ -1,10 +1,8 @@
-import React from 'react'
-import MainNavBar from '../layouts/MainNavBar'
+import React from 'react';
 
 const Quiz = () => {
     return (
         <div>
-            <MainNavBar />
             <h1>Quiz</h1>
         </div>
     )

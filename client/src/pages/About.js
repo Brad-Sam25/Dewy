@@ -1,10 +1,9 @@
-import React from 'react'
-import MainNavBar from '../layouts/MainNavBar'
+import React from 'react';
+
 
 const About = () => {
     return (
         <div>
-            <MainNavBar />
             <h1>About</h1>
         </div>
     )
