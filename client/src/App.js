@@ -9,15 +9,16 @@ import { useSelector } from 'react-redux';
 // import { bindActionCreators } from 'redux';
 // import { actionCreators } from './store/index';
 import React, { useEffect } from 'react';
-import { store } from './store/store';
+import store from './store/store';
 
-import { loadUser } from './store/action-creators/authActions'
+import { loadUser } from './store/action-creators/authActions';
+import { USER_LOADING } from './store/action-creators/types';
 
 
 function App() {
-  // useEffect(() => {
-  //   store.dispatch(loadUser())
-  // });
+    useEffect(() => {
+        store.dispatch(loadUser())
+    }, []);
   
   const state = useSelector(state => state)
   console.log(state)
