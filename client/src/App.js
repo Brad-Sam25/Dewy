@@ -13,6 +13,7 @@ import store from './store/store';
 
 import { loadUser } from './store/action-creators/authActions';
 import { USER_LOADING } from './store/action-creators/types';
+import Login from './components/Login';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
               <Switch>
                   <Route path="/home">
                       <Home />
+                      <Login />
                   </Route>
                   <Route path="/about">
                       <About />
