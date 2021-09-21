@@ -5,25 +5,26 @@ import About from "./pages/About";
 import Quiz from "./pages/Quiz";
 import { Switch, Route } from 'react-router-dom';
 import MainNavBar from './components/layouts/MainNavBar';
-import { useSelector } from 'react-redux';
-// import { bindActionCreators } from 'redux';
-// import { actionCreators } from './store/index';
+import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from './store/index';
 import React, { useEffect } from 'react';
 import store from './store/store';
-
-import { loadUser } from './store/action-creators/authActions';
-import { USER_LOADING } from './store/action-creators/types';
+// import { loadUser } from './store/action-creators/authActions';
+// import { USER_LOADING } from './store/action-creators/types';
 import Login from './components/Login';
 
 
 function App() {
-    useEffect(() => {
-        store.dispatch(loadUser())
-    }, []);
-  
-  const state = useSelector(state => state)
-  console.log(state)
+    const state = useSelector(state => state);
+    // console.log(state);
 
+    const dispatch = useDispatch();
+    const { loadUser } = bindActionCreators(actionCreators, dispatch);
+
+    useEffect(() => {
+        loadUser()
+    }, []);
 
   return (
       <div className="App">
