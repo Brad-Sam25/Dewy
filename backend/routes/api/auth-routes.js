@@ -12,59 +12,93 @@ require('dotenv').config();
 
 const secret = process.env.JWT_SECRET;
 
+//POST api/auth/register
+router.post('/register', async (req, res) => {
+    const { name, email, password } = req.body;
 
-// POST api/auth
-router.post('/', (req, res) => {
+    if(!name ||!email || !password) {
+        return res.status(400).json({ msg: 'Please fill out the respective fields.' });
+    }
+
+    try {
+        const user = await User.findOne({ email });
+        if(user) throw Error('An account with this user already exists');
+
+        const salt = await bcrypt.genSalt(10);
+        if (!salt) throw Error('An error occurred with bcrypt');
+
+        const hash = bcrypt.hash(password, salt);
+        if (!hash) throw Error('Password could not be hashed');
+
+        const newUser = new User ({
+            name,
+            email,
+            password:hash
+        });
+
+        const savedUser = await newUser.save();
+        if (!savedUser) throw Error('The user could not be saved');
+
+        const token = jwt.sign({ id: savedUser.id }, secret, { expiresIn: 3600});
+
+        res.status(200).json({
+            token,
+            user: {
+                id: user.id,
+                name: user.name,
+                email: user.email
+            }
+        })
+    } catch (error) {
+        res.status(400).json({msg: error.message})
+    }
+});
+
+
+// POST api/auth/login
+router.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
     if(!email || !password) {
         return res.status(400).json({ msg: 'Please fill out the respective fields.' });
     }
 
-    //Check for existing user
-    User.findOne({ email })
-    .then( user => {
-        if(!user) {
-            return res.status(400).json({ msg: 'No account with this user exists' });
-        }
+    try {
+        const user = await User.findOne({ email });
+        if(!user) throw Error('No account with this user exists');
 
-        //validate passwords
-        bcrypt.compare(password, user.password)
-          .then(isMatch => {
-            if(!isMatch) {
-              return res.status(400).json({ msg: 'Invalid credentials' })
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) throw Error('The credentials you have entered is incorrect');
+
+        const token = jwt.sign(
+            { id: user.id },
+            secret,
+            { expiresIn: 3600 });
+        if (!token) throw Error('token could not be signed');
+
+        res.status(200).json({
+            token,
+            user: {
+                id: user.id,
+                name: user.name,
+                email: user.email
             }
-            
-            jwt.sign(
-              { id: user.id },
-              secret,
-              { expiresIn: 3600 },
-              (err, token) => {
-                  if(err) throw err;
-                  res.json({
-                      token,
-                      user: {
-                          id: user.id,
-                          name: user.name,
-                          email: user.email
-                      }
-                  })
-              }
-              
-          )
-          })
-        
-    })
+        })
+    } catch (error) {
+        res.status(400).json({msg: error.message})
+    }
 });
 
-//@rout GET api/auth/user
-//@desc get user data
-//@access Private
 
-router.get('/user', authMiddleware, (req, res) => {
-    User.findById(req.user.id)
-    .select('_password')
-    .then(user => res.json(user));
+router.get('/user', authMiddleware, async(req, res) => {
+    try {
+        const user = User.findById(req.user.id)
+        .select('_password');
+        res.json(user);
+    } catch (error) {
+        res.status(400).json({msg: error.message})
+    }
+    
 })
 
 
