@@ -15,7 +15,7 @@ import Login from './components/auth/Login';
 
 
 function App() {
-    const state = useSelector(state => state.auth.isAthenthicated);
+    const state = useSelector(state => state.auth.isAuthenticated);
     console.log(state);
 
     const dispatch = useDispatch();
