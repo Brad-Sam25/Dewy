@@ -12,6 +12,7 @@ import React, { useEffect } from 'react';
 // import { loadUser } from './store/action-creators/authActions';
 // import { USER_LOADING } from './store/action-creators/types';
 import Login from './components/auth/Login';
+import SignUp from './components/auth/SignUp';
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
               <Switch>
                   <Route path="/home">
                       <Home />
-                      <Login />
+                      <SignUp />
                   </Route>
                   <Route path="/about">
                       <About />
