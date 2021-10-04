@@ -7,23 +7,21 @@ import { Switch, Route } from 'react-router-dom';
 import MainNavBar from './components/layouts/MainNavBar';
 import { useSelector, useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { actionCreators } from './store/index';
+import { authActionCreators } from './store/index';
 import React, { useEffect } from 'react';
-// import { loadUser } from './store/action-creators/authActions';
-// import { USER_LOADING } from './store/action-creators/types';
 import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
 
 
 function App() {
-    const state = useSelector(state => state.auth.isAuthenticated);
+    const state = useSelector(state => state);
     console.log(state);
 
     const dispatch = useDispatch();
-    const { loadUser } = bindActionCreators(actionCreators, dispatch);
+    const { loadUser } = bindActionCreators(authActionCreators, dispatch);
 
     useEffect(() => {
-        loadUser()
+        store.dispatch(loadUser())
     }, []);
 
   return (

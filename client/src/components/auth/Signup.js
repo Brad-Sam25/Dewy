@@ -4,9 +4,13 @@ import classes from './SignUp.module.css'
 import { useState, useEffect } from 'react';
 import { register } from "../../store/action-creators/authorization";
 import { REGISTER_FAIL } from "../../store/action-creators/types";
+import { useSelector } from "react-redux"
 
 
 const SignUp = () => {
+    const state = useSelector(state => state)
+    console.log(state)
+
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -29,15 +33,15 @@ const SignUp = () => {
     } 
 
 
-    useEffect(() => {
-      console.log(error)
-      if(error.id === 'REGISTER_FAIL') {
-        setMsg(error.msg.msg)
-      }
-      else {
-        setMsg(null)
-      }
-    }, [error, REGISTER_FAIL])
+
+    // useEffect(() => {
+    //   if(error.id === 'REGISTER_FAIL') {
+    //     setMsg(error.msg.msg)
+    //   }
+    //   else {
+    //     setMsg(null)
+    //   }
+    // }, [error, REGISTER_FAIL])
 
     return (
         <div>
