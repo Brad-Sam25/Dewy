@@ -1,20 +1,40 @@
 import React from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Alert } from "react-bootstrap";
 import classes from './SignUp.module.css'
 import { useState, useEffect } from 'react';
-import { register } from "../../store/action-creators/authorization";
-import { REGISTER_FAIL } from "../../store/action-creators/types";
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux";
+import { signUp } from "../../utils/api";
+import { bindActionCreators } from 'redux';
+import { authActionCreators } from '../../store/index';
 
 
 const SignUp = () => {
-    const state = useSelector(state => state)
-    console.log(state)
+    const error = useSelector(state => state.error)
+    const dispatch = useDispatch();
+
+
+    const { setRegisterSuccess, setRegisterFail  } = bindActionCreators(authActionCreators, dispatch);
+
+    
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [msg, setMsg] = useState(null);
+    const [message, setMessage] = useState(null);
+
+    const register = (newUser) => {
+      const body = JSON.stringify(newUser)
+      signUp(body)
+        .then(res =>{
+          setRegisterSuccess(res.data)
+          setMessage('Success')
+        })
+        .catch(error => {
+          console.log(error.response.data)
+          setRegisterFail()
+          setMessage('Failure')
+        })
+    }
 
     const handleChangeName = (event) => setName(event.target.value);
     const handleChangeEmail = (event) => setEmail(event.target.value);
@@ -24,24 +44,22 @@ const SignUp = () => {
         event.preventDefault();
 
         const newUser = {
-            name,
-            email,
-            password
+            name: name,
+            email: email,
+            password: password
         };
 
         register(newUser);
     } 
 
-
-
-    // useEffect(() => {
-    //   if(error.id === 'REGISTER_FAIL') {
-    //     setMsg(error.msg.msg)
-    //   }
-    //   else {
-    //     setMsg(null)
-    //   }
-    // }, [error, REGISTER_FAIL])
+    useEffect(() => {
+      if(error.id === 'REGISTER_FAIL') {
+        setMessage(error.msg)
+      }
+      else {
+        setMessage(null)
+      }
+    }, [error])
 
     return (
         <div>
@@ -75,6 +93,7 @@ const SignUp = () => {
           <Button variant="primary" type="submit">
             Sign up
           </Button>
+          {message ? <Alert color="danger">{message}</Alert> : null}
         </Form>
       </div>
     )

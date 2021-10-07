@@ -11,17 +11,25 @@ import { authActionCreators } from './store/index';
 import React, { useEffect } from 'react';
 import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
-
+import { checkUserToken } from './utils/api';
 
 function App() {
-    const state = useSelector(state => state);
-    console.log(state);
+    // const state = useSelector(state => state);
+    // console.log(state);
 
     const dispatch = useDispatch();
-    const { loadUser } = bindActionCreators(authActionCreators, dispatch);
+    const { setUserLoaded, setUserLoading, setAuthError  } = bindActionCreators(authActionCreators, dispatch);
 
     useEffect(() => {
-        store.dispatch(loadUser())
+        setUserLoading();
+        checkUserToken(null)
+            .then( res => {
+                setUserLoaded(res.data)
+            })
+            .catch(error => {
+                console.log(error.response.data)
+                setAuthError()            
+            })
     }, []);
 
   return (

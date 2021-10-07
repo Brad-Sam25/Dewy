@@ -10,23 +10,48 @@ import {
     REGISTER_FAIL
 } from './types';
 import { returnErrors } from './errorActions';
+// import { useDispatch } from 'react-redux';
 
-export const loadUser = () => (dispatch, getState) => {
-    dispatch({ type: USER_LOADING });
 
-    axios.get('/api/auth/user', tokenConfig(getState) )
-    .then(res => {
-        dispatch({
-            type: USER_LOADED,
-            payload: res.data
+export const setUserLoading = () => {
+    return (dispatch) => {
+        return dispatch({ type: USER_LOADING })
+    }
+}
+
+export const setUserLoaded = (userData) => {
+    return (dispatch) => {
+        return dispatch({ type: USER_LOADED,
+            payload: userData
         })
-    })
-    .catch(err => {
-        dispatch(returnErrors(err.response.data, err.response.status))
-        dispatch({
+    }
+}
+
+export const setAuthError = () => {
+    return (dispatch) => {
+        return dispatch({ 
             type: AUTH_ERROR
         })
-    })
+    }
+}
+
+
+
+export const setRegisterSuccess = (userData) => {
+    return (dispatch) => {
+        return dispatch({ type: REGISTER_SUCCESS,
+            payload: userData
+        })
+    }
+}
+
+
+export const setRegisterFail = () => {
+    return (dispatch) => {
+        return dispatch({ 
+            type: REGISTER_FAIL
+        })
+    }
 }
 
 export const register = ({name, email, password }) => dispatch => {
