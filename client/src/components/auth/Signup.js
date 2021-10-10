@@ -12,11 +12,9 @@ const SignUp = () => {
     const error = useSelector(state => state.error)
     const dispatch = useDispatch();
 
-
     const { setRegisterSuccess, setRegisterFail  } = bindActionCreators(authActionCreators, dispatch);
 
     
-
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -32,7 +30,7 @@ const SignUp = () => {
         .catch(error => {
           console.log(error.response.data)
           setRegisterFail()
-          setMessage('Failure')
+          setMessage('Be sure to fill out all fields')
         })
     }
 
@@ -59,7 +57,7 @@ const SignUp = () => {
       else {
         setMessage(null)
       }
-    }, [error])
+    }, [error.id])
 
     return (
         <div>
@@ -67,8 +65,8 @@ const SignUp = () => {
           <Form.Group controlId="name">
             <Form.Label className={classes.labelTitle}>Name</Form.Label>
             <Form.Control 
-            type="email" 
-            placeholder="Enter email address"
+            type="name" 
+            placeholder="Enter full name"
             onChange={handleChangeName}
             />
           </Form.Group>
@@ -78,6 +76,7 @@ const SignUp = () => {
             <Form.Control 
             type="email" 
             placeholder="Enter email address"
+            as="input"
             onChange={handleChangeEmail}
             />
           </Form.Group>
@@ -87,13 +86,14 @@ const SignUp = () => {
             <Form.Control 
             type="password"
             placeholder="Password"
+            as="input"
             onChange={handleChangePassword}
             />
           </Form.Group>
+          {message ? <Alert variant="danger">{message}</Alert> : null}
           <Button variant="primary" type="submit">
             Sign up
           </Button>
-          {message ? <Alert color="danger">{message}</Alert> : null}
         </Form>
       </div>
     )
