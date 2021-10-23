@@ -1,0 +1,15 @@
+.wallpaper {
+    background-image: url("https://images.pexels.com/photos/3735616/pexels-photo-3735616.jpeg?cs=srgb&dl=pexels-polina-tankilevitch-3735616.jpg&fm=jpg;");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+}
+
+.skinQuiz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+}

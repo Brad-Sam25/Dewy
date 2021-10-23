@@ -13,6 +13,8 @@ import { returnErrors } from './errorActions';
 // import { useDispatch } from 'react-redux';
 
 
+
+
 export const setUserLoading = () => {
     return (dispatch) => {
         return dispatch({ type: USER_LOADING })
@@ -35,47 +37,44 @@ export const setAuthError = () => {
     }
 }
 
-
-
-export const setRegisterSuccess = (userData) => {
-    return (dispatch) => {
-        return dispatch({ 
-            type: REGISTER_SUCCESS,
-            payload: userData
-        })
-    }
-}
-
-
-export const setRegisterFail = () => {
-    return (dispatch) => {
-        return dispatch({ 
-            type: REGISTER_FAIL
-        })
-    }
-}
-
-// export const register = ({name, email, password }) => dispatch => {
-//     const config = {
-//         headers: {
-//             'Content-Type': 'application/json'
-//         }
-//     }
-    
-//     const body = JSON.stringify({ name, email, password })
-
-//     axios.post('/api/auth/register', body, config)
-//         .then(res => dispatch({
+// export const setRegisterSuccess = (userData) => {
+//     return (dispatch) => {
+//         return dispatch({ 
 //             type: REGISTER_SUCCESS,
-//             payload: res.data
-//         }))
-//         .catch(error => {
-//             dispatch(returnErrors(error.response.data, error.response.status, 'REGISTER_FAIL'));
-//             dispatch({
-//                 type: REGISTER_FAIL
-//             })
+//             payload: userData
 //         })
+//     }
 // }
+
+// export const setRegisterFail = () => {
+//     return (dispatch) => {
+//         return dispatch({ 
+//             type: REGISTER_FAIL
+//         })
+//     }
+// }
+
+export const register = ({name, email, password }) => dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+    
+    const body = JSON.stringify({ name, email, password })
+
+    axios.post('/api/auth/register', body, config)
+        .then(res => dispatch({
+            type: REGISTER_SUCCESS,
+            payload: res.data
+        }))
+        .catch(error => {
+            dispatch(returnErrors(error.response.data, error.response.status, 'REGISTER_FAIL'));
+            dispatch({
+                type: REGISTER_FAIL
+            })
+        })
+}
 
 export const login = ({name, email, password }) => dispatch => {
     const config = {

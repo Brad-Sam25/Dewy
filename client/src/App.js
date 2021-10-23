@@ -5,7 +5,7 @@ import About from "./pages/About";
 import Quiz from "./pages/Quiz";
 import { Switch, Route } from 'react-router-dom';
 import MainNavBar from './components/layouts/MainNavBar';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { authActionCreators } from './store/index';
 import React, { useEffect } from 'react';
@@ -38,7 +38,7 @@ function App() {
               <Switch>
                   <Route path="/home">
                       <Home />
-                      <SignUp />
+                      {/* <SignUp /> */}
                   </Route>
                   <Route path="/about">
                       <About />
