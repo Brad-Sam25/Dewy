@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bentham&display=swap');
+
 .wallpaper {
     background-image: url("https://images.pexels.com/photos/3735616/pexels-photo-3735616.jpeg?cs=srgb&dl=pexels-polina-tankilevitch-3735616.jpg&fm=jpg;");
     background-position: center;
@@ -6,10 +8,57 @@
     height: 700px;
 }
 
-.skinQuiz {
+.skinContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
+    flex-direction: column;
+}
+
+.skinGroup {
+    margin-top: 10rem;
+    font-family: 'Bentham', serif;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+button{
+    background: #A6D2E1;
+    color:#fff;
+    border:none;
+    position:relative;
+    height: 105px;
+    font-size:1.6em;
+    padding:0 -2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+}
+
+button:hover{
+    background:#fff;
+    color:#95BDCB;
+}
+
+button:before,button:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #95BDCB;
+    transition:400ms ease all;
+}
+
+button:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+button:hover:before,button:hover:after{
+    width:100%;
+    transition:800ms ease all;
 }
