@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bentham&display=swap');
 
 .wallpaper {
-    background-image: url("https://images.pexels.com/photos/3735616/pexels-photo-3735616.jpeg?cs=srgb&dl=pexels-polina-tankilevitch-3735616.jpg&fm=jpg;");
+    background-image: url("https://images.pexels.com/photos/6690857/pexels-photo-6690857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -20,6 +20,7 @@
     font-family: 'Bentham', serif;
     font-size: 50px;
     font-weight: bold;
+    color: #FEFFF1;
 }
 
 button{
@@ -29,7 +30,7 @@ button{
     position:relative;
     height: 105px;
     font-size:1.6em;
-    padding:0 -2em;
+    padding:0 1em;
     cursor:pointer;
     transition:800ms ease all;
     outline:none;

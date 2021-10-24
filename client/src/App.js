@@ -12,6 +12,7 @@ import React, { useEffect } from 'react';
 import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
 import { checkUserToken } from './utils/api';
+import Footer from './components/layouts/Footer';
 
 function App() {
     // const state = useSelector(state => state);
@@ -37,8 +38,9 @@ function App() {
             <MainNavBar />
               <Switch>
                   <Route path="/home">
-                      <Home />
+                      {/* <Home /> */}
                       {/* <SignUp /> */}
+                      <Footer />
                   </Route>
                   <Route path="/about">
                       <About />

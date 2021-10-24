@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Bentham&display=swap');
+
+.footerTitle {
+    font-family: 'Bentham', serif;
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.footerBgd {
+    background-color: #B1D3E3;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
