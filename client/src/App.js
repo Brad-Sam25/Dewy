@@ -38,9 +38,8 @@ function App() {
             <MainNavBar />
               <Switch>
                   <Route path="/home">
-                      {/* <Home /> */}
+                      <Home />
                       {/* <SignUp /> */}
-                      <Footer />
                   </Route>
                   <Route path="/about">
                       <About />
@@ -49,6 +48,8 @@ function App() {
                       <Quiz />
                   </Route>
               </Switch>
+            <Footer />
+
       </div>
   );
 }
