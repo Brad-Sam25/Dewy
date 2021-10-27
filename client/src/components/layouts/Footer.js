@@ -5,8 +5,8 @@ import classes from './Footer.module.css';
 
 const Footer = () => {
   return (
-    <footer >
-      <Container >
+    <footer className= { classes.footerBgd }>
+      <Container className= { classes.footerColor }>
         <Row className= "mb-5">
           <Col className= { classes.footerTitle }>Dewy</Col>
         </Row>
