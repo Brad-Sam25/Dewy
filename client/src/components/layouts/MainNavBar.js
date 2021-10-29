@@ -1,18 +1,14 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+import classes from './MainNavBar.module.css';
 
 const MainNavBar = () => {
     return (
         <div>
-            <Navbar bg="dark" variant={ 'dark' } expand="lg">
+            <Navbar className= {classes.navContent} variant={ 'dark' } expand="lg">
                 <Container>
-                <Navbar.Brand>
-                    <Link to="/home">
-                        Dewy
-                    </Link>
-                </Navbar.Brand>
+
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
@@ -34,6 +30,11 @@ const MainNavBar = () => {
                     </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
+                <Navbar.Brand>
+                    <Link to="/home" className= { classes.navTitle}>
+                        Dewy
+                    </Link>
+                </Navbar.Brand>
                 </Container>
             </Navbar>
         </div>
