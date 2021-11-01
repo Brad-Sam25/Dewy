@@ -24,7 +24,7 @@
     color: #FEFFF1;
 }
 
-button{
+.homeBtn{
     background: #A6D2E1;
     color:#fff;
     border:none;
@@ -37,12 +37,12 @@ button{
     outline:none;
 }
 
-button:hover{
+.homeBtn:hover{
     background:#fff;
     color:#95BDCB;
 }
 
-button:before,button:after{
+.homeBtn:before,.homeBtn:after{
     content:'';
     position:absolute;
     top:0;
@@ -53,14 +53,14 @@ button:before,button:after{
     transition:400ms ease all;
 }
 
-button:after{
+.homeBtn:after{
     right:inherit;
     top:inherit;
     left:0;
     bottom:0;
 }
 
-button:hover:before,button:hover:after{
+.homeBtn:hover:before,.homeBtn:hover:after{
     width:100%;
     transition:800ms ease all;
 }

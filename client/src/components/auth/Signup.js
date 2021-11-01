@@ -50,7 +50,9 @@ const SignUp = () => {
             email,
             password
         };
-
+        
+        console.log(newUser);
+        
         register(newUser);
     } 
 
@@ -96,7 +98,7 @@ const SignUp = () => {
             />
           </Form.Group>
           {message ? <Alert variant="danger">{message}</Alert> : null}
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" onClick = { handleSubmit }>
             Sign up
           </Button>
         </Form>

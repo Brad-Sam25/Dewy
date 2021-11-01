@@ -8,7 +8,7 @@ const Home = () => {
                 <div className= {classes.skinGroup}>
                     <h1>Skincare Quiz</h1>
                     <p>Discover your skin's potential</p>
-                    <button>Take Quiz</button>
+                    <button className= { classes.homeBtn }>Take Quiz</button>
                 </div>
             </div>
         </div>
