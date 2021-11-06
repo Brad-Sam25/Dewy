@@ -38,8 +38,8 @@ function App() {
             <MainNavBar />
               <Switch>
                   <Route path="/home">
-                      <Home />
-                      {/* <SignUp /> */}
+                      {/* <Home /> */}
+                      <SignUp />
                   </Route>
                   <Route path="/about">
                       <About />
