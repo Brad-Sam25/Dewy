@@ -24,9 +24,6 @@ const SignUp = () => {
       const body = JSON.stringify(newUser)
 
       signUp(body)
-        .then(body => {
-          console.log(body)
-        })
         .then(res =>{
           setRegisterSuccess(res.body)
           setMessage('Success')
