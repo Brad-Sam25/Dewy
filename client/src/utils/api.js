@@ -12,8 +12,6 @@ import {
 import { useDispatch } from 'react-redux';
 
 
-
-
 export const checkUserToken = token => {
     return axios.get('/api/auth/user', token )
 }
