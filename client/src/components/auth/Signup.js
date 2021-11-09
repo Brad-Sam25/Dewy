@@ -12,7 +12,7 @@ const SignUp = () => {
     const error = useSelector(state => state.error)
     const dispatch = useDispatch();
 
-    const { setRegisterSuccess, setRegisterFail  } = bindActionCreators(authActionCreators, dispatch);
+    // const { setRegisterSuccess, setRegisterFail  } = bindActionCreators(authActionCreators, dispatch);
 
     
     const [name, setName] = useState('');
@@ -20,20 +20,22 @@ const SignUp = () => {
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState(null);
 
-    const register = (newUser) => {
-      const body = JSON.stringify(newUser)
+    // const register = (newUser) => {
+    //   const body = JSON.stringify(newUser)
 
-      signUp(body)
-        .then(res =>{
-          setRegisterSuccess(res.body)
-          setMessage('Success')
-        })
-        .catch(error => {
-          console.log(error.response.data)
-          setRegisterFail()
-          setMessage('Be sure to fill out all fields')
-        })
-    }
+    //   console.log(signUp(body))
+
+    //   signUp(body)
+    //     .then(res =>{
+    //       setRegisterSuccess(res.body)
+    //       setMessage('Success')
+    //     })
+    //     .catch(error => {
+    //       console.log(error.response.data)
+    //       setRegisterFail()
+    //       setMessage('Be sure to fill out all fields')
+    //     })
+    // }
 
     const handleChangeName = (event) => setName(event.target.value);
     const handleChangeEmail = (event) => setEmail(event.target.value);

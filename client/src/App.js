@@ -13,6 +13,8 @@ import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import { checkUserToken } from "./utils/api";
 import Footer from "./components/layouts/Footer";
+import { loadUser } from "./store/action-creators/authActions";
+import store from "./store/store";
 
 function App() {
   // const state = useSelector(state => state);
@@ -25,15 +27,16 @@ function App() {
   );
 
   useEffect(() => {
-    setUserLoading();
-    checkUserToken(null)
-      .then((res) => {
-        setUserLoaded(res.data);
-      })
-      .catch((error) => {
-        console.log(error.response.data);
-        setAuthError();
-      });
+    store.dispatch(loadUser());
+    // setUserLoading();
+    // checkUserToken(null)
+    //   .then((res) => {
+    //     setUserLoaded(res.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error.response.data);
+    //     setAuthError();
+    //   });
   }, []);
 
   return (

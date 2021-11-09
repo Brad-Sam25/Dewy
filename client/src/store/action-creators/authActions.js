@@ -15,67 +15,87 @@ import { returnErrors } from './errorActions';
 
 
 
-export const setUserLoading = () => {
-    return (dispatch) => {
-        return dispatch({ type: USER_LOADING })
-    }
-}
-
-export const setUserLoaded = (userData) => {
-    return (dispatch) => {
-        return dispatch({ type: USER_LOADED,
-            payload: userData
-        })
-    }
-}
-
-export const setAuthError = () => {
-    return (dispatch) => {
-        return dispatch({ 
-            type: AUTH_ERROR
-        })
-    }
-}
-
-export const setRegisterSuccess = (userData) => {
-    return (dispatch) => {
-        return dispatch({ 
-            type: REGISTER_SUCCESS,
-            payload: userData
-        })
-    }
-}
-
-export const setRegisterFail = () => {
-    return (dispatch) => {
-        return dispatch({ 
-            type: REGISTER_FAIL
-        })
-    }
-}
-
-// export const register = ({name, email, password }) => dispatch => {
-    // const config = {
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     }
-    // }
-    
-//     const body = JSON.stringify({ name, email, password })
-
-//     axios.post('/api/auth/register', body)
-//         .then(res => 
-//             dispatch({
-//             type: REGISTER_SUCCESS,
-//             payload: res.data
-//         }))
-//         .catch(error => {
-//             dispatch(returnErrors(error.response.data, error.response.status, 'REGISTER_FAIL'));
-//             dispatch({
-//                 type: REGISTER_FAIL
-//             })
-//         })
+// export const setUserLoading = () => {
+//     return (dispatch) => {
+//         return dispatch({ type: USER_LOADING })
+//     }
 // }
+
+// export const setUserLoaded = (userData) => {
+//     return (dispatch) => {
+//         return dispatch({ type: USER_LOADED,
+//             payload: userData
+//         })
+//     }
+// }
+
+// export const setAuthError = () => {
+//     return (dispatch) => {
+//         return dispatch({ 
+//             type: AUTH_ERROR
+//         })
+//     }
+// }
+
+// export const setRegisterSuccess = (userData) => {
+//     return (dispatch) => {
+//         return dispatch({ 
+//             type: REGISTER_SUCCESS,
+//             payload: userData
+//         })
+//     }
+// }
+
+// export const setRegisterFail = () => {
+//     return (dispatch) => {
+//         return dispatch({ 
+//             type: REGISTER_FAIL
+//         })
+//     }
+// }
+
+
+export const loadUser = () => (dispatch, getState) => {
+    dispatch({ type: USER_LOADING });
+
+  axios
+    .get('/api/auth/user', tokenConfig(getState))
+    .then(res =>
+      dispatch({
+        type: USER_LOADED,
+        payload: res.data
+      })
+    )
+    .catch(err => {
+      dispatch(returnErrors(err.response.data, err.response.status));
+      dispatch({
+        type: AUTH_ERROR
+      });
+    });
+}
+
+export const register = ({name, email, password }) => dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+    
+    const body = JSON.stringify({ name, email, password })
+
+    axios.post('/api/auth/register', body, config)
+        .then(res => 
+            dispatch({
+            type: REGISTER_SUCCESS,
+            payload: res.data
+        }))
+        .catch(error => {
+            dispatch(returnErrors(error.response.data, error.response.status, 'REGISTER_FAIL'));
+            dispatch({
+                type: REGISTER_FAIL
+            })
+        })
+}
 
 export const login = ({name, email, password }) => dispatch => {
     const config = {
