@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 mongoose.connect(process.env.DEWY_DB_URI || 'mongodb://localhost/dewy')
     .then(() => {
@@ -6,4 +6,4 @@ mongoose.connect(process.env.DEWY_DB_URI || 'mongodb://localhost/dewy')
     })
     .catch(error => console.error(`Error: ${error}`))
 
-module.exports = mongoose.connection;
+export default mongoose.connection;
