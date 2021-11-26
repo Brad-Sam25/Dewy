@@ -9,11 +9,7 @@ import { authActionCreators } from '../../store/index';
 import { register } from '../../store/action-creators/authActions'
 
 const SignUp = () => {
-    const error = useSelector(state => state.error)
     const dispatch = useDispatch();
-
-    // const { setRegisterSuccess, setRegisterFail  } = bindActionCreators(authActionCreators, dispatch);
-
     
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');

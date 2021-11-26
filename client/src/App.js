@@ -4,21 +4,20 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Quiz from "./pages/Quiz";
 import { Switch, Route } from "react-router-dom";
-import MainNavBar from "./components/layouts/MainNavBar";
+import MainNavBar from "./components/Layouts/MainNavBar";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { authActionCreators } from "./store/index";
 import React, { useEffect } from "react";
-import Login from "./components/auth/Login";
-import SignUp from "./components/auth/SignUp";
+import Login from "./components/Auth/Login";
+import SignUp from "./components/Auth/SignUp";
 import { checkUserToken } from "./utils/api";
-import Footer from "./components/layouts/Footer";
+import Footer from "./components/Layouts/Footer";
 import { loadUser } from "./store/action-creators/authActions";
 import store from "./store/store";
 
 function App() {
-  // const state = useSelector(state => state);
-  // console.log(state);
+  const dispatch = useDispatch();
 
   const dispatch = useDispatch();
   const { setUserLoaded, setUserLoading, setAuthError } = bindActionCreators(
@@ -27,16 +26,7 @@ function App() {
   );
 
   useEffect(() => {
-    store.dispatch(loadUser());
-    // setUserLoading();
-    // checkUserToken(null)
-    //   .then((res) => {
-    //     setUserLoaded(res.data);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error.response.data);
-    //     setAuthError();
-    //   });
+    dispatch();
   }, []);
 
   return (
