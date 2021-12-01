@@ -1,6 +1,6 @@
 import React from 'react';
-import { Jumbotron, Container } from "react-bootstrap";
-import classes from './About.module.css'
+// import { Jumbotron, Container } from "react-bootstrap";
+import classes from './styles.js'
 
 
 const About = () => {
