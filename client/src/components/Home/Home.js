@@ -1,16 +1,16 @@
 import React from 'react';
-import classes from './styles.js'
+
 
 const Home = () => {
     return (
-        <div className= { classes.wallpaper }>
-            <div className= {classes.skinContainer}>
+        <div >
+            {/* <div className= {classes.skinContainer}>
                 <div className= {classes.skinGroup}>
                     <h1>Skincare Quiz</h1>
                     <p>Discover your skin's potential</p>
                     <button className= { classes.homeBtn }>Take Quiz</button>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

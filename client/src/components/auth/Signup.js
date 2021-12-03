@@ -126,8 +126,7 @@ const SignUp = () => {
           <Button
             type="submit"
             fullWidth
-            variant="contained"
-            color="primary"
+            variant="outlined"
             className={classes.submit}
           >
             {isSignup ? "Sign Up" : "Sign In"}
@@ -137,12 +136,11 @@ const SignUp = () => {
             render={(renderProps) => (
               <Button
                 className={classes.googleButton}
-                color="primary"
                 fullWidth
                 onClick={renderProps.onClick}
                 disabled={renderProps.disabled}
                 startIcon={<Icon />}
-                variant="contained"
+                variant="outlined"
               >
                 Google Sign In
               </Button>

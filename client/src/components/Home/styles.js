@@ -1,4 +1,13 @@
-// @import url('https://fonts.googleapis.com/css2?family=Bentham&display=swap');
+import { makeStyles } from '@material-ui/core';
+
+export default makeStyles({
+    btn: {
+        color:
+    }
+})
+
+
+
 
 // .wallpaper {
 //     background-image: url("https://images.pexels.com/photos/6690857/pexels-photo-6690857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");

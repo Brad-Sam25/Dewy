@@ -1,36 +1,31 @@
-import jwt from 'jsonwebtoken';
+import jwt, { decode } from 'jsonwebtoken';
 
 require('dotenv').config();
-
 const secret = process.env.JWT_SECRET;
 
+
 const auth = async(req, res, next) => {
-    const token = req.headers.authorization.split(" ")[1];
-    
-    const isCustomAuth = token.length < 500;
+        
+    try {
+        const token = req.headers.authorization.split(" ")[1];
+        const isCustomAuth = token.length < 500;
+        
+        let decodedData;
 
-    let decodedData;
+        if(token && isCustomAuth) {
+            decodedData = jwt.verify(token, secret);
 
-    if(!token) {
-        return res.status(401).json({ msg: 'You have no token!' });
-    }
+            req.userId = decodedData?.id;
+        } else{
+            decodedData= jwt.decode(token);
 
-    if(token && isCustomAuth) {
-        decodedData = jwt.verify(token, JWT_SECRET);
+            req.userId = decodedData?.sub;
+        }
 
-        req.userId = decodedData?.id;
-    } else {
-        decodedData =jwt.decode(token);
-
-        req.userId = decodedData?.sub;
-    }
-    try{
-        const decoded = jwt.verify(token, secret);
-        req.user = decoded
         next();
-    } catch(e) {
-        res.status(400).json({ msg: 'Token is not valid' })
+    } catch (error) {
+        console.log(error);
     }
-}
+};
 
 export default auth;
