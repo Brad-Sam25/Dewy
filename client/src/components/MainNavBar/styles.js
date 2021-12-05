@@ -1,23 +1,23 @@
 import { makeStyles } from '@material-ui/core';
-import { deepPurple } from '@material-ui/core/colors';
+import { blueGrey, deepPurple } from '@material-ui/core/colors';
 
 export default makeStyles((theme) => ({
     appBar: {
-        margin: '30px 0',
+        margin: '0',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+        backgroundColor: blueGrey[700],
+        borderRadius: '80px',
         padding: '10px 50px',
         [theme.breakpoints.down('sm')]: {
           flexDirection: 'column',
         },
       },
       heading: {
-        color: theme.palette.primary.main,
-        textDecoration: 'none',
+        color: 'white',
         fontSize: '2em',
-        fontWeight: 300,
       },
       image: {
         marginLeft: '10px',
