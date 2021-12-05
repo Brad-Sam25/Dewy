@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { AppBar, Typography, Toolbar, Avatar, Button } from "@material-ui/core";
+import { AppBar, Typography, Toolbar, Avatar, Button, IconButton } from "@material-ui/core";
+import MenuIcon from '@material-ui/icons/Menu';
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import decode from "jwt-decode";
@@ -22,6 +23,8 @@ const MainNavBar = () => {
     setUser(null);
   };
 
+
+
   useEffect(() => {
     const token = user?.token;
 
@@ -33,9 +36,19 @@ const MainNavBar = () => {
 
     setUser(JSON.parse(localStorage.getItem("profile")));
   }, [location]);
+  
 
   return (
     <AppBar className={classes.appBar} position="relative">
+      <IconButton
+      size="large"
+      color="inherit"
+      aria-label="menu"
+      style={{marginRight: '-800px'}}
+      
+      >
+        <MenuIcon />
+      </IconButton>
       <Link to="/" 
         className={classes.brandContainer} 
         style= {{textDecoration: 'none'}}

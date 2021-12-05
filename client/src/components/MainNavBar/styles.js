@@ -19,10 +19,6 @@ export default makeStyles((theme) => ({
         color: 'white',
         fontSize: '2em',
       },
-      image: {
-        marginLeft: '10px',
-        marginTop: '5px',
-      },
       toolbar: {
         display: 'flex',
         justifyContent: 'flex-end',

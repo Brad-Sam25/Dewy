@@ -1,4 +1,4 @@
-import { blueGrey } from '@material-ui/core/colors';
+import { blueGrey, orange } from '@material-ui/core/colors';
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
@@ -8,6 +8,7 @@ export default makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     padding: theme.spacing(2),
+    backgroundColor: blueGrey[50]
   },
   root: {
     '& .MuiTextField-root': {
@@ -16,10 +17,10 @@ export default makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: blueGrey[500]
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '100%', 
     marginTop: theme.spacing(3),
   },
   submit: {
@@ -35,31 +36,3 @@ export default makeStyles((theme) => ({
     }
   },
 }));
-
-
-
-
-
-
-
-
-
-
-
-
-
-// @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-
-// .login {
-//     width: 100%;
-//     max-width: 330px;
-//     padding: 60px 16px;
-//     margin: auto;
-//     height: 100%;
-//     box-shadow: 0 7px 10px 0 rgba(0,0,0,0.2);
-// }
-
-// .labelTitle {
-//     font-family: 'Permanent Marker', cursive;
-//     font-size: 50px;
-// }

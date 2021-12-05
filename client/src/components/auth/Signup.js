@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import FingerprintIcon from '@material-ui/icons/Fingerprint';
 
 import Icon from './icon';
 import { signin, signup } from "../../actions/auth";
@@ -77,7 +77,7 @@ const SignUp = () => {
     <Container component="main" maxWidth="xs">
       <Paper className={classes.paper} elevation={3}>
         <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
+          <FingerprintIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
           {isSignup ? "Sign up" : "Sign in"}
