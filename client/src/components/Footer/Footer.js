@@ -1,12 +1,16 @@
 import React from "react";
-import classes from './Footer.module.css';
+import { Box, Button, Container, Typography } from "@material-ui/core";
+import useStyles from './styles'
 
 
 const Footer = () => {
+  const classes = useStyles();
   return (
-    <footer className= { classes.footerBgd }>
-      
-    </footer>
+    <Box component='footer' className={classes.ftr}>
+      <Typography>
+        Dewy
+      </Typography>
+    </Box>
   );
 };
 

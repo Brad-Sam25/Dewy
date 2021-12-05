@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Auth from "./components/Auth/SignUp";
 import Quiz from "./components/Quiz/Quiz";
-// import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer.js"
 import MainNavBar from "./components/MainNavBar/MainNavBar";
 import { ThemeProvider } from "@material-ui/core";
 import outerTheme from "./styles";
@@ -21,6 +21,7 @@ function App() {
             <Route path="/quiz" exact component={Quiz} />
           </Switch>
         </Container>
+        {/* <Footer /> */}
       </ThemeProvider>
     </BrowserRouter>
   );
