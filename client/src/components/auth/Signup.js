@@ -7,10 +7,10 @@ import {
   Grid,
   Typography,
   Container,
-} from "@material-ui/core";
+} from "@mui/material";
 import { useHistory } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
-import FingerprintIcon from '@material-ui/icons/Fingerprint';
+import FingerprintIcon from '@mui/icons-material/Fingerprint';
 
 import Icon from './icon';
 import { signin, signup } from "../../actions/auth";

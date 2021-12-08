@@ -6,20 +6,26 @@ import Auth from "./components/Auth/SignUp";
 import Quiz from "./components/Quiz/Quiz";
 import Footer from "./components/Footer/Footer.js";
 import MainNavBar from "./components/MainNavBar/MainNavBar";
+import { ThemeProvider } from "@mui/styles";
+import { createTheme } from "@mui/material/styles";
+
+let theme = createTheme();
 
 function App() {
   return (
-    <BrowserRouter>
-      <MainNavBar />
-      <Container maxWidth="lg">
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/auth" exact component={Auth} />
-          <Route path="/quiz" exact component={Quiz} />
-        </Switch>
-      </Container>
-      {/* <Footer /> */}
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <MainNavBar />
+        <Container maxWidth="lg">
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/auth" exact component={Auth} />
+            <Route path="/quiz" exact component={Quiz} />
+          </Switch>
+        </Container>
+        {/* <Footer /> */}
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

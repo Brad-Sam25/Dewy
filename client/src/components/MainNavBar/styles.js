@@ -1,7 +1,9 @@
-import { makeStyles } from '@material-ui/core';
-import { blueGrey, deepPurple } from '@material-ui/core/colors';
+import { makeStyles } from '@mui/styles';
+import { blueGrey, deepPurple } from '@mui/material/colors';
 
-export default makeStyles((theme) => ({
+let useStyles;
+
+export default useStyles = makeStyles((theme) => ({
     appBar: {
         margin: '0',
         display: 'flex',

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { questions } from "../../helpers/QuestionBank";
-import { Typography, Container, Box, Avatar } from "@material-ui/core";
+import { Typography, Container, Box, Avatar } from "@mui/material";
 import { useStyles } from "./styles";
 import { scIcons } from "./icons";
 
@@ -12,7 +12,7 @@ const Quiz = () => {
   return (
     <Container align="center">
       <Box className={classes.qNum}>
-        {scIcons.forEach((scIcon) => {
+        {scIcons.forEach(scIcon => {
             <Avatar>{scIcon}</Avatar>
         })}
         {/* <Avatar style={{ backgroundColor: "purple" }}>2</Avatar>

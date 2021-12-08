@@ -1,21 +1,6 @@
-// import {  makeStyles } from '@material-ui/core';
-import  { createTheme } from '@material-ui/core';
-import WebFont from 'webfontloader';
+// import { makeStyles } from '@material-ui/core/styles';
 
-WebFont.load({
-  google: {
-    families: ['Bentham', 'serif']
-  }
-});
-
-const outerTheme = createTheme({
-  typography : {
-    fontFamily: 'Bentham'
-  }
-});
-
-
-// export default makeStyles(() => ({
+// export default makeStyles((theme) => ({
 //     [theme.breakpoints.down('sm')]: {
 //         mainContainer: {
 //           flexDirection: 'column-reverse',
@@ -37,4 +22,3 @@ const outerTheme = createTheme({
 //       },
 // }));
 
-export default outerTheme;

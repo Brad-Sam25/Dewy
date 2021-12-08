@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bentham&display=swap');
+
 body {
     background-image: url("https://images.pexels.com/photos/6690857/pexels-photo-6690857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-repeat: no-repeat;
@@ -5,4 +7,10 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
+
+* { 
+    font-family: 'Bentham', serif !important;
+}
+
+
 
