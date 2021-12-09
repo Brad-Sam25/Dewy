@@ -1,5 +1,6 @@
 import { blueGrey, orange } from '@material-ui/core/colors';
 import { makeStyles } from '@mui/styles';
+import { color } from '@mui/system';
 
 let useStyles;
 
@@ -10,7 +11,7 @@ export default useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     padding: theme.spacing(2),
-    backgroundColor: blueGrey[50]
+    backgroundColor: blueGrey[200]
   },
   root: {
     '& .MuiTextField-root': {
@@ -27,14 +28,33 @@ export default useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    color: 'black',
     '&:hover': {
       backgroundColor: blueGrey[600]
     }
   },
   googleButton: {
     marginBottom: theme.spacing(2),
+    color: 'black',
     '&:hover': {
       backgroundColor: blueGrey[600]
     }
   },
+  bottomBtn: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  noSignin: {
+    color: 'black',
+    '&:hover': {
+      backgroundColor: blueGrey[600]
+    }
+  },
+
+  inputTxt: {
+    borderColor: blueGrey[800]
+  }
+
+  
 }));

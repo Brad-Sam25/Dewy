@@ -126,7 +126,7 @@ const SignUp = () => {
           <Button
             type="submit"
             fullWidth
-            variant="outlined"
+            variant="text"
             className={classes.submit}
           >
             {isSignup ? "Sign Up" : "Sign In"}
@@ -140,7 +140,7 @@ const SignUp = () => {
                 onClick={renderProps.onClick}
                 disabled={renderProps.disabled}
                 startIcon={<Icon />}
-                variant="outlined"
+                variant="text"
               >
                 Google Sign In
               </Button>
@@ -149,9 +149,9 @@ const SignUp = () => {
             onFailure={googleError}
             cookiePolicy="single_host_origin"
           />
-          <Grid container justify="flex-end">
-            <Grid item>
-              <Button onClick={switchMode}>
+          <Grid container className={classes.bottomBtn} >
+            <Grid item >
+              <Button onClick={switchMode} className={classes.noSignin}>
                 {isSignup
                   ? "Already have an account? Sign in"
                   : "Don't have an account? Sign Up"}
