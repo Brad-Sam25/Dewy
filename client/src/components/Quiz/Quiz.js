@@ -69,7 +69,7 @@ const Quiz = () => {
 
   const getResults = () => {
     setCurrQuestion(currQuestion + 1);
-    history.push("/");
+    history.push("/results");
   };
   return (
     <Container align="center">
