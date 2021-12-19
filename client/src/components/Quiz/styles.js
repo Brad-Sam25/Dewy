@@ -1,3 +1,4 @@
+import { blueGrey } from "@mui/material/colors";
 import { makeStyles } from "@mui/styles";
 
 export const useStyles = makeStyles({
@@ -10,7 +11,30 @@ export const useStyles = makeStyles({
     questionBox: {
         marginBottom: '50px'
     },
-    optionBox: {
-        
-    }
+
+    optionBtn: {
+        backgroundColor: blueGrey[400],
+        "&:focus": {
+            backgroundColor: blueGrey[800]
+        },
+        "&:hover": {
+            backgroundColor: blueGrey[200]
+        }
+    },
+    btnBox:{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    traverseBtn: {
+        backgroundColor: "black",
+        color: "whitesmoke",
+        "&:hover": {
+            backgroundColor:"grey",
+            borderColor:"black"
+        },
+        width:"25%",
+        marginTop:"50px",
+        borderColor:"black"
+    },
 })
