@@ -164,15 +164,36 @@ const Quiz = () => {
           </Button>
         ) : null}
         {currQuestion == questions.length - 1 ? (
-          <Button onClick={getResults} variant="outlined">
+           <Box
+           display="grid"
+           gridTemplateColumns="repeat(2, 1fr)"
+           gap={10}
+           className={classes.btnBox}
+         >
+           <Button
+             onClick={previousQuestion}
+             variant="outlined"
+             className={classes.traverseBtn}
+             style={{visibility: currQuestion === 0 ? 'hidden' : 'visible'}}
+           >
+             Back
+           </Button>
+           <Button onClick={getResults} variant="outlined" className={classes.resultsBtn}>
             Get Results
           </Button>
+         </Box>
         ) : (
-          <Box display="grid" gridTemplateColumns="repeat(2, 1fr)" gap={10} className={ classes.btnBox}>
+          <Box
+            display="grid"
+            gridTemplateColumns="repeat(2, 1fr)"
+            gap={10}
+            className={classes.btnBox}
+          >
             <Button
               onClick={previousQuestion}
               variant="outlined"
               className={classes.traverseBtn}
+              style={{visibility: currQuestion === 0 ? 'hidden' : 'visible'}}
             >
               Back
             </Button>

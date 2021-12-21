@@ -37,4 +37,15 @@ export const useStyles = makeStyles({
         marginTop:"50px",
         borderColor:"black"
     },
+    resultsBtn: {
+        backgroundColor: "black",
+        color: "whitesmoke",
+        "&:hover": {
+            backgroundColor:"green",
+            borderColor:"green"
+        },
+        width:"25%",
+        marginTop:"50px",
+        borderColor:"green"
+    },
 })
