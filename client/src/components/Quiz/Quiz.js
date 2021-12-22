@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { questions } from "../../helpers/QuestionBank";
 import {
@@ -15,6 +16,7 @@ import WaterIcon from "@mui/icons-material/Water";
 import SanitizerIcon from "@mui/icons-material/Sanitizer";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import styled from "styled-components";
+import { setQuestionOne, setQuestionTwo, setQuestionThree, setQuestionFour, setQuestionFive } from "../../actions";
 
 const StyledAvatarTest = styled.div`
   display: flex;
@@ -64,8 +66,21 @@ const Quiz = () => {
   console.log(optionChosen);
   const classes = useStyles();
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const nextQuestion = () => {
+    if(currQuestion === 0){
+      dispatch(setQuestionOne(optionChosen))
+    } 
+    else if (currQuestion === 1) {
+      dispatch(setQuestionTwo(optionChosen))
+    } 
+    else if ( currQuestion === 2) {
+      dispatch(setQuestionThree(optionChosen))
+    }
+    else if ( currQuestion === 3) {
+      dispatch(setQuestionFour(optionChosen))
+    }
     setCurrQuestion(currQuestion + 1);
   };
   const previousQuestion = () => {
@@ -73,6 +88,9 @@ const Quiz = () => {
   };
 
   const getResults = () => {
+    if ( currQuestion === 4) {
+      dispatch(setQuestionFive(optionChosen))
+    }
     setCurrQuestion(currQuestion + 1);
     history.push("/results");
   };
