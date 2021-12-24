@@ -170,7 +170,7 @@ const Quiz = () => {
         >
           {questions[currQuestion].optionC}
         </Button>
-        {currQuestion === 0 ? (
+        {currQuestion === 3 ? (
           <Button
             onClick={() => {
               setoptionChosen("optionD");
