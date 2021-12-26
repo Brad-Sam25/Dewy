@@ -181,7 +181,7 @@ const Quiz = () => {
             {questions[currQuestion].optionD}
           </Button>
         ) : null}
-        {currQuestion == questions.length - 1 ? (
+        {currQuestion === questions.length - 1 ? (
            <Box
            display="grid"
            gridTemplateColumns="repeat(2, 1fr)"

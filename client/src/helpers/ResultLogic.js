@@ -3,178 +3,192 @@ import { products } from "./Products";
 export const prompt1T = (answer) => {
   if (answer === "optionA") {
     return products[0].productName;
-  }  if (answer === "optionB") {
+  }
+
+  if (answer === "optionB") {
     return products[1].productName;
-  }  if (answer === "optionC") {
+  }
+
+  if (answer === "optionC") {
     return products[2].productName;
-  }  if (answer === "optionD") {
-    return products[3].productName;
   }
 };
 
 export const prompt1M = (answer) => {
   if (answer === "optionA") {
     return products[0].productMedia;
-  }  if (answer === "optionB") {
+  }
+
+  if (answer === "optionB") {
     return products[1].productMedia;
-  }  if (answer === "optionC") {
+  }
+
+  if (answer === "optionC") {
     return products[2].productMedia;
-  }  if (answer === "optionD") {
-    return products[3].productMedia;
   }
 };
 
 export const prompt1D = (answer) => {
   if (answer === "optionA") {
     return products[0].productDescription;
-  }  if (answer === "optionB") {
+  }
+
+  if (answer === "optionB") {
     return products[1].productDescription;
-  }  if (answer === "optionC") {
+  }
+
+  if (answer === "optionC") {
     return products[2].productDescription;
-  }  if (answer === "optionD") {
-    return products[3].productDescription;
   }
 };
 
-
 export const prompt2T = (answer) => {
-    if (answer === "optionA") {
-      return products[0].productName;
-    }  if (answer === "optionB") {
-      return products[1].productName;
-    }  if (answer === "optionC") {
-      return products[2].productName;
-    }  if (answer === "optionD") {
-      return products[3].productName;
-    }
-  };
+  if (answer === "optionA") {
+    return products[3].productName;
+  }
+  if (answer === "optionB") {
+    return products[4].productName;
+  }
+  if (answer === "optionC") {
+    return products[5].productName;
+  }
+};
 
-  export const prompt2M = (answer) => {
-    if (answer === "optionA") {
-      return products[0].productMedia;
-    }  if (answer === "optionB") {
-      return products[1].productMedia;
-    }  if (answer === "optionC") {
-      return products[2].productMedia;
-    }  if (answer === "optionD") {
-      return products[3].productMedia;
-    }
-  };
-  
-  export const prompt2D = (answer) => {
-    if (answer === "optionA") {
-      return products[0].productDescription;
-    }  if (answer === "optionB") {
-      return products[1].productDescription;
-    }  if (answer === "optionC") {
-      return products[2].productDescription;
-    }  if (answer === "optionD") {
-      return products[3].productDescription;
-    }
-  };
+export const prompt2M = (answer) => {
+  if (answer === "optionA") {
+    return products[3].productMedia;
+  }
+  if (answer === "optionB") {
+    return products[4].productMedia;
+  }
+  if (answer === "optionC") {
+    return products[5].productMedia;
+  }
+};
+
+export const prompt2D = (answer) => {
+  if (answer === "optionA") {
+    return products[3].productDescription;
+  }
+  if (answer === "optionB") {
+    return products[4].productDescription;
+  }
+  if (answer === "optionC") {
+    return products[5].productDescription;
+  }
+};
 export const prompt3T = (answer) => {
-    if (answer === "optionA") {
-      return products[0].productName;
-    }  if (answer === "optionB") {
-      return products[1].productName;
-    }  if (answer === "optionC") {
-      return products[2].productName;
-    }  if (answer === "optionD") {
-      return products[3].productName;
-    }
-  };
+  if (answer === "optionA") {
+    return products[6].productName;
+  }
+  if (answer === "optionB") {
+    return products[7].productName;
+  }
+  if (answer === "optionC") {
+    return products[8].productName;
+  }
+};
 
-  export const prompt3M = (answer) => {
-    if (answer === "optionA") {
-      return products[0].productMedia;
-    }  if (answer === "optionB") {
-      return products[1].productMedia;
-    }  if (answer === "optionC") {
-      return products[2].productMedia;
-    }  if (answer === "optionD") {
-      return products[3].productMedia;
-    }
-  };
-  
-  export const prompt3D = (answer) => {
-    if (answer === "optionA") {
-      return products[0].productDescription;
-    }  if (answer === "optionB") {
-      return products[1].productDescription;
-    }  if (answer === "optionC") {
-      return products[2].productDescription;
-    }  if (answer === "optionD") {
-      return products[3].productDescription;
-    }
-  };
+export const prompt3M = (answer) => {
+  if (answer === "optionA") {
+    return products[6].productMedia;
+  }
+  if (answer === "optionB") {
+    return products[7].productMedia;
+  }
+  if (answer === "optionC") {
+    return products[8].productMedia;
+  }
+};
+
+export const prompt3D = (answer) => {
+  if (answer === "optionA") {
+    return products[6].productDescription;
+  }
+  if (answer === "optionB") {
+    return products[7].productDescription;
+  }
+  if (answer === "optionC") {
+    return products[8].productDescription;
+  }
+};
 export const prompt4T = (answer) => {
-    if (answer === "optionA") {
-      return products[0].productName;
-    }  if (answer === "optionB") {
-      return products[1].productName;
-    }  if (answer === "optionC") {
-      return products[2].productName;
-    }  if (answer === "optionD") {
-      return products[3].productName;
-    }
-  };
+  if (answer === "optionA") {
+    return products[9].productName;
+  }
+  if (answer === "optionB") {
+    return products[10].productName;
+  }
+  if (answer === "optionC") {
+    return products[11].productName;
+  }
+  if (answer === "optionD") {
+    return products[12].productName;
+  }
+};
 
-  export const prompt4M = (answer) => {
-    if (answer === "optionA") {
-      return products[0].productMedia;
-    }  if (answer === "optionB") {
-      return products[1].productMedia;
-    }  if (answer === "optionC") {
-      return products[2].productMedia;
-    }  if (answer === "optionD") {
-      return products[3].productMedia;
-    }
-  };
-  
-  export const prompt4D = (answer) => {
-    if (answer === "optionA") {
-      return products[0].productDescription;
-    }  if (answer === "optionB") {
-      return products[1].productDescription;
-    }  if (answer === "optionC") {
-      return products[2].productDescription;
-    }  if (answer === "optionD") {
-      return products[3].productDescription;
-    }
-  };
+export const prompt4M = (answer) => {
+  if (answer === "optionA") {
+    return products[9].productMedia;
+  }
+  if (answer === "optionB") {
+    return products[10].productMedia;
+  }
+  if (answer === "optionC") {
+    return products[11].productMedia;
+  }
+  if (answer === "optionD") {
+    return products[12].productMedia;
+  }
+};
+
+export const prompt4D = (answer) => {
+  if (answer === "optionA") {
+    return products[9].productDescription;
+  }
+  if (answer === "optionB") {
+    return products[10].productDescription;
+  }
+  if (answer === "optionC") {
+    return products[11].productDescription;
+  }
+  if (answer === "optionD") {
+    return products[12].productDescription;
+  }
+};
 
 export const prompt5T = (answer) => {
-    if (answer === "optionA") {
-      return products[0].productName;
-    }  if (answer === "optionB") {
-      return products[1].productName;
-    }  if (answer === "optionC") {
-      return products[2].productName;
-    }  if (answer === "optionD") {
-      return products[3].productName;
-    }
-  };
+  if (answer === "optionA") {
+    return products[13].productName;
+  }
+  if (answer === "optionB") {
+    return products[14].productName;
+  }
+  if (answer === "optionC") {
+    return products[15].productName;
+  }
+};
 
-  export const prompt5M = (answer) => {
-    if (answer === "optionA") {
-      return products[0].productMedia;
-    }  if (answer === "optionB") {
-      return products[1].productMedia;
-    }  if (answer === "optionC") {
-      return products[2].productMedia;
-    }  if (answer === "optionD") {
-      return products[3].productMedia;
-    }
-  };
-  
-  export const prompt5D = (answer) => {
-    if (answer === "optionA") {
-      return products[0].productDescription;
-    }  if (answer === "optionB") {
-      return products[1].productDescription;
-    }  if (answer === "optionC") {
-      return products[2].productDescription;
-    }  if (answer === "optionD") {
-      return products[3].productDescription;
-    }
-  };
+export const prompt5M = (answer) => {
+  if (answer === "optionA") {
+    return products[13].productMedia;
+  }
+  if (answer === "optionB") {
+    return products[14].productMedia;
+  }
+  if (answer === "optionC") {
+    return products[15].productMedia;
+  }
+};
+
+export const prompt5D = (answer) => {
+  if (answer === "optionA") {
+    return products[13].productDescription;
+  }
+  if (answer === "optionB") {
+    return products[14].productDescription;
+  }
+  if (answer === "optionC") {
+    return products[15].productDescription;
+  }
+};
