@@ -3,6 +3,18 @@ import { blueGrey } from "@material-ui/core/colors";
 
 export default makeStyles({
     ftr: {
-        backgroundColor: blueGrey[500]
+        display: "flex",
+        alignItems:"center",
+        justifyContent: "center",
+        position:"fixed",
+        marginTop:"calc(5% + 60px)",
+        left:"0",
+        bottom:"0",
+        right:"0",
+        backgroundColor: blueGrey[900],
+        color:"white"
+    },
+    innerFtr: {
+        minHeight: "100%"
     }
 });

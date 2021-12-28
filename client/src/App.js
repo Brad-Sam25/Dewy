@@ -25,7 +25,7 @@ function App() {
             <Route path="/results" exact component={Results} />
           </Switch>
         </Container>
-        {/* <Footer /> */}
+        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );
