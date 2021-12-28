@@ -16,7 +16,13 @@ import WaterIcon from "@mui/icons-material/Water";
 import SanitizerIcon from "@mui/icons-material/Sanitizer";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import styled from "styled-components";
-import { setQuestionOne, setQuestionTwo, setQuestionThree, setQuestionFour, setQuestionFive } from "../../actions";
+import {
+  setQuestionOne,
+  setQuestionTwo,
+  setQuestionThree,
+  setQuestionFour,
+  setQuestionFive,
+} from "../../actions";
 
 const StyledAvatarTest = styled.div`
   display: flex;
@@ -69,30 +75,36 @@ const Quiz = () => {
   const dispatch = useDispatch();
 
   const nextQuestion = () => {
-    if(currQuestion === 0){
-      dispatch(setQuestionOne(optionChosen))
-    } 
-    else if (currQuestion === 1) {
-      dispatch(setQuestionTwo(optionChosen))
-    } 
-    else if ( currQuestion === 2) {
-      dispatch(setQuestionThree(optionChosen))
+    if (currQuestion === 0) {
+      dispatch(setQuestionOne(optionChosen));
+    } else if (currQuestion === 1) {
+      dispatch(setQuestionTwo(optionChosen));
+    } else if (currQuestion === 2) {
+      dispatch(setQuestionThree(optionChosen));
+    } else if (currQuestion === 3) {
+      dispatch(setQuestionFour(optionChosen));
     }
-    else if ( currQuestion === 3) {
-      dispatch(setQuestionFour(optionChosen))
+    if (optionChosen === "") {
+      alert("You must select a choice");
+    } else {
+      setCurrQuestion(currQuestion + 1);
     }
-    setCurrQuestion(currQuestion + 1);
   };
   const previousQuestion = () => {
     setCurrQuestion(currQuestion - 1);
   };
 
   const getResults = () => {
-    if ( currQuestion === 4) {
-      dispatch(setQuestionFive(optionChosen))
+    if (currQuestion === 4) {
+      dispatch(setQuestionFive(optionChosen));
     }
-    setCurrQuestion(currQuestion + 1);
-    history.push("/results");
+    if(optionChosen === "") {
+      alert("You must select a choice")
+    }
+    else{
+      setCurrQuestion(currQuestion + 1);
+      history.push("/results");
+    }
   };
   return (
     <Container align="center">
@@ -182,24 +194,28 @@ const Quiz = () => {
           </Button>
         ) : null}
         {currQuestion === questions.length - 1 ? (
-           <Box
-           display="grid"
-           gridTemplateColumns="repeat(2, 1fr)"
-           gap={10}
-           className={classes.btnBox}
-         >
-           <Button
-             onClick={previousQuestion}
-             variant="outlined"
-             className={classes.traverseBtn}
-             style={{visibility: currQuestion === 0 ? 'hidden' : 'visible'}}
-           >
-             Back
-           </Button>
-           <Button onClick={getResults} variant="outlined" className={classes.resultsBtn}>
-            Get Results
-          </Button>
-         </Box>
+          <Box
+            display="grid"
+            gridTemplateColumns="repeat(2, 1fr)"
+            gap={10}
+            className={classes.btnBox}
+          >
+            <Button
+              onClick={previousQuestion}
+              variant="outlined"
+              className={classes.traverseBtn}
+              style={{ visibility: currQuestion === 0 ? "hidden" : "visible" }}
+            >
+              Back
+            </Button>
+            <Button
+              onClick={getResults}
+              variant="outlined"
+              className={classes.resultsBtn}
+            >
+              Get Results
+            </Button>
+          </Box>
         ) : (
           <Box
             display="grid"
@@ -211,7 +227,7 @@ const Quiz = () => {
               onClick={previousQuestion}
               variant="outlined"
               className={classes.traverseBtn}
-              style={{visibility: currQuestion === 0 ? 'hidden' : 'visible'}}
+              style={{ visibility: currQuestion === 0 ? "hidden" : "visible" }}
             >
               Back
             </Button>
