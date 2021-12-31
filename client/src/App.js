@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "@material-ui/core";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Auth from "./components/Auth/SignUp";
+import Auth from "./components/Auth/Signup";
 import Quiz from "./components/Quiz/Quiz";
 import Results from "./components/Results/Results"
 import Footer from "./components/Footer/Footer.js";
