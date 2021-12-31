@@ -41,6 +41,19 @@ export const prompt1D = (answer) => {
     return products[2].productDescription;
   }
 };
+export const prompt1L = (answer) => {
+  if (answer === "optionA") {
+    return products[0].productLink;
+  }
+
+  if (answer === "optionB") {
+    return products[1].productLink;
+  }
+
+  if (answer === "optionC") {
+    return products[2].productLink;
+  }
+};
 
 export const prompt2T = (answer) => {
   if (answer === "optionA") {
@@ -77,6 +90,18 @@ export const prompt2D = (answer) => {
     return products[5].productDescription;
   }
 };
+export const prompt2L = (answer) => {
+  if (answer === "optionA") {
+    return products[3].productLink;
+  }
+  if (answer === "optionB") {
+    return products[4].productLink;
+  }
+  if (answer === "optionC") {
+    return products[5].productLink;
+  }
+};
+
 export const prompt3T = (answer) => {
   if (answer === "optionA") {
     return products[6].productName;
@@ -112,6 +137,18 @@ export const prompt3D = (answer) => {
     return products[8].productDescription;
   }
 };
+export const prompt3L = (answer) => {
+  if (answer === "optionA") {
+    return products[6].productLink;
+  }
+  if (answer === "optionB") {
+    return products[7].productLink;
+  }
+  if (answer === "optionC") {
+    return products[8].productLink;
+  }
+};
+
 export const prompt4T = (answer) => {
   if (answer === "optionA") {
     return products[9].productName;
@@ -156,6 +193,20 @@ export const prompt4D = (answer) => {
     return products[12].productDescription;
   }
 };
+export const prompt4L = (answer) => {
+  if (answer === "optionA") {
+    return products[9].productLink;
+  }
+  if (answer === "optionB") {
+    return products[10].productLink;
+  }
+  if (answer === "optionC") {
+    return products[11].productLink;
+  }
+  if (answer === "optionD") {
+    return products[12].productLink;
+  }
+};
 
 export const prompt5T = (answer) => {
   if (answer === "optionA") {
@@ -190,5 +241,17 @@ export const prompt5D = (answer) => {
   }
   if (answer === "optionC") {
     return products[15].productDescription;
+  }
+};
+
+export const prompt5L = (answer) => {
+  if (answer === "optionA") {
+    return products[13].productLink;
+  }
+  if (answer === "optionB") {
+    return products[14].productLink;
+  }
+  if (answer === "optionC") {
+    return products[15].productLink;
   }
 };

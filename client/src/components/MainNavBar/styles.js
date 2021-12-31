@@ -11,7 +11,7 @@ export default useStyles = makeStyles((theme) => ({
         justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: blueGrey[700],
-        borderRadius: '80px',
+        borderRadius: '10px',
         padding: '10px 50px',
         [theme.breakpoints.down('sm')]: {
           flexDirection: 'column',

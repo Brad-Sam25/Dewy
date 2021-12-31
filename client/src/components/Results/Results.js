@@ -8,6 +8,7 @@ import {
   CardContent,
   CardHeader,
   CardMedia,
+  CardActions
 } from "@mui/material";
 import { useStyles } from "./styles";
 import { blue } from "@mui/material/colors";
@@ -16,18 +17,23 @@ import {
   prompt1T,
   prompt1M,
   prompt1D,
+  prompt1L,
   prompt2T,
   prompt2M,
   prompt2D,
+  prompt2L,
   prompt3T,
   prompt3M,
   prompt3D,
+  prompt3L,
   prompt4T,
   prompt4M,
   prompt4D,
+  prompt4L,
   prompt5T,
   prompt5M,
   prompt5D,
+  prompt5L
 } from "../../helpers/ResultLogic";
 import { useSelector } from "react-redux";
 
@@ -65,6 +71,11 @@ const Results = () => {
               {prompt1D(state.questionOne)}
             </Typography>
           </CardContent>
+          <CardActions className={classes.linkContainer}>
+            <a href={prompt1L(state.questionOne)} target="_blank" rel="noopener noreferrer" className={classes.buyLink}>
+              Buy Now
+            </a>
+          </CardActions>
         </Card>
 
         <Card raised elevation={6}>
@@ -83,6 +94,11 @@ const Results = () => {
               {prompt2D(state.questionTwo)}
             </Typography>
           </CardContent>
+          <CardActions className={classes.linkContainer}>
+          <a href={prompt2L(state.questionTwo)} target="_blank" rel="noopener noreferrer" className={classes.buyLink}>
+              Buy Now
+            </a>
+          </CardActions>
         </Card>
 
         <Card raised elevation={6}>
@@ -101,6 +117,11 @@ const Results = () => {
               {prompt3D(state.questionThree)}
             </Typography>
           </CardContent>
+          <CardActions className={classes.linkContainer}>
+          <a href={prompt3L(state.questionThree)} target="_blank" rel="noopener noreferrer" className={classes.buyLink}>
+              Buy Now
+            </a>
+          </CardActions>
         </Card>
 
         <Card raised elevation={6}>
@@ -119,6 +140,11 @@ const Results = () => {
               {prompt4D(state.questionFour)}
             </Typography>
           </CardContent>
+          <CardActions className={classes.linkContainer}>
+          <a href={prompt4L(state.questionFour)} target="_blank" rel="noopener noreferrer" className={classes.buyLink}>
+              Buy Now
+            </a>
+          </CardActions>
         </Card>
 
         <Card raised elevation={6}>
@@ -137,6 +163,11 @@ const Results = () => {
               {prompt5D(state.questionFive)}
             </Typography>
           </CardContent>
+          <CardActions className={classes.linkContainer}>
+          <a href={prompt5L(state.questionFive)} target="_blank" rel="noopener noreferrer" className={classes.buyLink}>
+              Buy Now
+            </a>
+          </CardActions>
         </Card>
       </Box>
     </Container>

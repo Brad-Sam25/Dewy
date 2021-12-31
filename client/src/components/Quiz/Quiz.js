@@ -6,8 +6,7 @@ import {
   Typography,
   Container,
   Box,
-  StyledAvatar,
-  Button,
+  Button
 } from "@mui/material";
 import { useStyles } from "./styles";
 import FaceIcon from "@mui/icons-material/Face";
@@ -32,6 +31,7 @@ const StyledAvatarTest = styled.div`
   width: 60px;
   border-radius: 50%;
   transition: 0.2s all ease;
+  box-shadow: 2px 2px 3px 1px #3b3b3b80;
 
   &.one {
     transform: ${(props) =>
@@ -223,14 +223,14 @@ const Quiz = () => {
             gap={10}
             className={classes.btnBox}
           >
-            <Button
+            { currQuestion === 0 ? null : <Button
               onClick={previousQuestion}
               variant="outlined"
               className={classes.traverseBtn}
               style={{ visibility: currQuestion === 0 ? "hidden" : "visible" }}
             >
               Back
-            </Button>
+            </Button>}
             <Button
               onClick={nextQuestion}
               variant="outlined"

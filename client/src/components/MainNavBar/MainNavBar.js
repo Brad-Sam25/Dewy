@@ -3,12 +3,13 @@ import { AppBar, Typography, Toolbar, Avatar, Button } from "@mui/material";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import decode from "jwt-decode";
-
 import * as actionType from "../../constants/actionTypes";
 import useStyles from "./styles";
 
 const MainNavBar = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+
+  console.log(user);
   const dispatch = useDispatch();
   const location = useLocation();
   const history = useHistory();
@@ -53,7 +54,7 @@ const MainNavBar = () => {
               alt={user?.result.name}
               src={user?.result.imageUrl}
             >
-              {user?.result.name.charAt(0)}
+              {user?.result?.name?.charAt(0)}
             </Avatar>
             <Typography className={classes.userName} variant="h6">
               {user?.result.name}
@@ -71,7 +72,7 @@ const MainNavBar = () => {
           <Button
             component={Link}
             to="/auth"
-            variant="outined"
+            variant="outlined"
             color='inherit'
           >
             Sign In
