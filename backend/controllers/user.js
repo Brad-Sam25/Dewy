@@ -12,22 +12,22 @@ export const signin = async(req, res) => {
 
     try {
         //We are first going to determine if the user exists in the db by comparing the user's email with the emails already in the in the db
-        const user = await User.findOne({ email });
+        const newUser = await User.findOne({ email });
 
         // If we cannot find the provided email in our db then we return a 404 and a message 
-        if (!user) return res.status(404).json({ message: "User does not exist" });
+        if (!newUser) return res.status(404).json({ message: "User does not exist" });
 
         // However if the email is found, we then compare the password with the provided password
-        const isPasswordCorrect = await bcrypt.compare(password, user.password);
+        const isPasswordCorrect = await bcrypt.compare(password, newUser.password);
 
         // If the password does not compare with the password already in the db then we return status code 400 and a message
         if(!isPasswordCorrect) return res.status(400).json({ message: "Invalid credentials" });
 
         // If both the email and the password matches what is in the db then we are going to get the jwt to send to the frontend
-        const token = jwt.sign({ email: user.email, id: user._id}, secret, { expiresIn: "1h" });
+        const token = jwt.sign({ email: newUser.email, id: newUser._id}, secret, { expiresIn: "1h" });
 
         // Now we return the result 
-        res.status(200).json({ result: user, token });
+        res.status(200).json({ result: newUser, token });
     } catch (error) {
         res.status(500).json({ message: "An error has occurred" });
     }
@@ -37,9 +37,9 @@ export const signup = async (req, res) => {
     const { email, password, firstName, lastName } = req.body;
 
     try {
-        const user = await User.findOne({ email });
+        const newUser = await User.findOne({ email });
 
-        if(user) return res.status(400).json({  message: "User already exists" });
+        if(newUser) return res.status(400).json({  message: "User already exists" });
 
         const hashedPassword = await bcrypt.hash(password, 12);
 
