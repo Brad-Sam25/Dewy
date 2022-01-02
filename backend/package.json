@@ -12,7 +12,7 @@
     "dev": "concurrently \"npm run backend\" \"cd.. && cd client && npm run start\""
   },
   "keywords": [],
-  "author": "",
+  "author": "Brad Samuel",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
