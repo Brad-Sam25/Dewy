@@ -39,7 +39,7 @@ const MainNavBar = () => {
   
 
   return (
-    <AppBar className={classes.appBar} position="relative">
+    <AppBar className={classes.appBar} position="relative" sx= {{ top: 0, bottom: 'auto' }} >
       <Link to="/" 
         className={classes.brandContainer} 
         style= {{textDecoration: 'none'}}
