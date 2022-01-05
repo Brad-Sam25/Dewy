@@ -7,7 +7,6 @@ export default makeStyles({
         alignItems:"center",
         justifyContent: "center",
         position:"fixed",
-        marginTop:"calc(100% + 60px)",
         left:"0",
         bottom:"0",
         right:"0",

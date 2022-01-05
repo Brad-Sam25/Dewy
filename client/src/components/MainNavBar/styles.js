@@ -5,7 +5,7 @@ let useStyles;
 
 export default useStyles = makeStyles((theme) => ({
     appBar: {
-        margin: '0',
+        top: 0,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',

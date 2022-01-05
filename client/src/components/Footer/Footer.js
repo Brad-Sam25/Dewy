@@ -6,7 +6,7 @@ import useStyles from './styles'
 const Footer = () => {
   const classes = useStyles();
   return (
-    <footer className={classes.ftr} sx={{ bottom: 0 }}>
+    <footer className={classes.ftr} style={{ top:'auto', bottom: 0, justifyContent: 'center', height: '20px'}}>
       <Box  >
           Dewy &reg; 2021
       </Box>
