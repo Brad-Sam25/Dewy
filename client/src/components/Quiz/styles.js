@@ -1,5 +1,5 @@
 import { blueGrey } from "@mui/material/colors";
-import { makeStyles } from "@mui/styles";
+import makeStyles  from '@mui/styles/makeStyles';
 
 export const useStyles = makeStyles({
     qNum: {

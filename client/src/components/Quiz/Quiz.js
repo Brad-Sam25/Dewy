@@ -8,7 +8,7 @@ import {
   Box,
   Button
 } from "@mui/material";
-import { useStyles } from "./styles";
+import {useStyles} from "./styles";
 import FaceIcon from "@mui/icons-material/Face";
 import FaceRetouchingOffIcon from "@mui/icons-material/FaceRetouchingOff";
 import WaterIcon from "@mui/icons-material/Water";

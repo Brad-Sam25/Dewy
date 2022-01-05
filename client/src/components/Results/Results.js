@@ -10,7 +10,7 @@ import {
   CardMedia,
   CardActions
 } from "@mui/material";
-import { useStyles } from "./styles";
+import {useStyles} from "./styles";
 import { blue } from "@mui/material/colors";
 import ScienceIcon from "@mui/icons-material/Science";
 import {

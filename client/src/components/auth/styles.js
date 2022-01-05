@@ -1,5 +1,5 @@
-import { blueGrey } from '@material-ui/core/colors';
-import { makeStyles } from '@mui/styles';
+import { blueGrey } from '@mui/material/colors';
+import makeStyles  from '@mui/styles/makeStyles';
 
 
 let useStyles;
