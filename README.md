@@ -16,6 +16,9 @@ However, it is important for me to note that not all skin concerns are as cookie
 * Material UI
 * JWT
 
+## Usage
+![ Gif of App Demo](Animation.gif) 
+
 ## Installation
 1. Run `npm install` to install the necessary npm package dependencies 
 2. You can start the appliation by running `cd client && npm run start` in the command line.
